@@ -1,12 +1,14 @@
-// Third-party imports
 import { PrismaClient } from '@prisma/client';
 
-// Set up a prisma instance
+// Set up prisma client
 const prisma = new PrismaClient();
 
+// Seed database with initial drivers
 async function seedDrivers() {
-  await prisma.driver.create({
-    data: {
+  await prisma.driver.upsert({
+    where: { name: 'Homer Simpson' },
+    update: {},
+    create: {
       name: 'Homer Simpson',
       description:
         'Olá! Sou o Homer, seu motorista camarada! ' +
@@ -21,8 +23,11 @@ async function seedDrivers() {
       min_km: 1,
     },
   });
-  await prisma.driver.create({
-    data: {
+
+  await prisma.driver.upsert({
+    where: { name: 'Dominic Toretto' },
+    update: {},
+    create: {
       name: 'Dominic Toretto',
       description:
         'Ei, aqui é o Dom. Pode entrar, vou te levar ' +
@@ -38,8 +43,11 @@ async function seedDrivers() {
       min_km: 5,
     },
   });
-  await prisma.driver.create({
-    data: {
+
+  await prisma.driver.upsert({
+    where: { name: 'James Bond' },
+    update: {},
+    create: {
       name: 'James Bond',
       description:
         'Boa noite, sou James Bond. À seu dispor ' +
@@ -58,7 +66,7 @@ async function seedDrivers() {
   });
 }
 
-// Insert default drivers into database
+// Disconnect client after seeding or failure
 seedDrivers()
   .then(async () => {
     await prisma.$disconnect();
