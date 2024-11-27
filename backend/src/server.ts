@@ -1,7 +1,5 @@
-// Third-party imports
 import { PrismaClient } from '@prisma/client';
 
-// Internal imports
 import app from './app';
 
 const PORT = 8080;
@@ -17,7 +15,7 @@ async function main() {
     });
   } catch (err) {
     console.error('Error connecting to database');
-    process.exit(0);
+    process.exit(1);
   }
 }
 
