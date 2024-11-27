@@ -2,7 +2,7 @@
 
 Este é um teste técnico aplicado pela startup Shopper para vaga de desenvolvedor Web Full-stack.
 
-O teste consiste em projetar e construir uma aplicação web full-stack no estilo dos apps Uber / 99 Taxi.
+O teste consiste em projetar e construir uma aplicação web full-stack que oferece serviço semelhante ao Uber / 99 Taxi.
 
 🔧 🏗️🏗️🏗️ ⚙️
 Em construção...
@@ -35,7 +35,7 @@ Em construção...
 - Validação dos dados inseridos ✔️
 - Validação via consulta ao banco ✔️
 - Persistir viagem no banco de dados ✔️
-- Formatar resposta do body com dados obtidos ✔️ 
+- Formatar resposta do body com dados obtidos ✔️
 
 ### 4 - Backend: Endpoint GET / ride / {customer_id}?driver_id={id do motorista}
 
@@ -50,38 +50,51 @@ Em construção...
 
 ### 5 - Frontend: Tela de Solicitação de Viagem
 
-- Implementar formulário com campos necessários para requisição
-- Implementar a requisição para a API
-- Exibir tela de opções de viagem
+- Implementar formulário com campos necessários para requisição ✔️
+- Implementar a requisição para a API ✔️
+- Exibir tela de opções de viagem ✔️
+- Tratamento de erros ✔️
 
 ### 6 - Frontend: Tela de Opções de Viagem
 
-- Incluir mapa estático da rota calculada
-- Listar opções de motoristas da viagem
-- Redirecionar para tela de histórico
+- Incluir mapa estático da rota calculada ✔️
+- Listar opções de motoristas da viagem ✔️
+- Redirecionar para tela de histórico ✔️
+- Tratamento de erros ✔️
 
-### 7 - Frontend: Tela de Histórico de ViageNS
+### 7 - Frontend: Tela de Histórico de Viagens
 
-- Incluir formulário para filtro de viagens
-- Exibição da lista de viagens segundo filtro
+- Incluir formulário para filtro de viagens ✔️
+- Exibição da lista de viagens segundo filtro ✔️
+- Tratamento de erros ✔️
 
 24/11/2024 e 25/11/2024
 
 ### 8 - DevOps: Conteinerização da aplicação
 
+- Criação do Dockerfile para o backend ✔️
+- Criação do Dockerfile para o frontend ✔️
+- Criação do Dockercompose ✔️
+
 ### 9 - Refatoração
+
+- Extrair serviços e funções para arquivos menores ✔️
+- Revisar nomes de funções e variáveis ✔️
+- Padronizar formatação do código ✔️
+- Incluir comentários ✔️
+- Excluir arquivos desnecessários ✔️
+- Avaliar estrutura da aplicação ✔️
 
 26/11/2024 e 27/11/2024
 
 ### 10 - Features opcionais
 
-- Testes unitários
-- Validação com Zod
-- Entrega do projeto
+- Estilizar a aplicação ✔️
+- Testes unitários (backend) ✔️
 
 27/11/2024
 
 ### 11 - Deadline
 
-- Preenchimento do formulário Google
-- Entrega da aplicação
+- Alterar repositório para público
+- Envio da aplicação via formulário Google
