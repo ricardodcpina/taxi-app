@@ -1,0 +1,17 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
