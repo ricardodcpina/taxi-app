@@ -1,4 +1,4 @@
-import { APIError, RideError } from './types';
+import { RideError } from './types/errors';
 
 export const invalidDataError: RideError = {
   status_code: 400,
@@ -25,14 +25,20 @@ export const noRidesFound: RideError = {
   error_description: 'Nenhum registro encontrado',
 };
 
+export const addressNotFound: RideError = {
+  status_code: 404,
+  error_code: 'INVALID_ADDRESS',
+  error_description: 'Um dos endereços fornecidos não foram encontrados',
+};
+
 export const invalidDistance: RideError = {
   status_code: 406,
   error_code: 'INVALID_DISTANCE',
   error_description: 'Quilometragem inválida para o motorista',
 };
 
-export const externalAPIError: APIError = {
+export const externalAPIError: RideError = {
   status_code: 500,
   error_code: 'EXTERNAL_API_ERROR',
-  error_description: 'Falha ao coletar dados da API Route do Google',
+  error_description: 'Falha ao coletar dados da API do Google',
 };
