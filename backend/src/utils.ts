@@ -1,16 +1,20 @@
 import { invalidDataError } from './errors';
 
-export function validateUserInput(
-  origin: string,
-  destination: string,
-  customer_id: string
-): boolean {
-  // Origin, destination and customer_id must not be empty
-  if (!origin || !destination || !customer_id) {
-    throw invalidDataError;
+// Validate if provided args are empty
+export function validateBlankFields(...args: string[]): boolean {
+  for (let arg of args) {
+    if (!arg) {
+      throw invalidDataError;
+    }
   }
+  return true;
+}
 
-  // Origin and destination addresses must not be the same
+// Valiate if origin and destionation addresses are different
+export function validateAddresses(
+  origin: string,
+  destination: string
+) {
   let processedOrigin = origin
     // Remove accents
     .normalize('NFD')
@@ -19,7 +23,6 @@ export function validateUserInput(
     // Guarante case insensitivity
     .toLowerCase();
 
-  // Same for the destination input
   let processedDestination = destination
     .normalize('NFD')
     .replace(/[\u0300-\u036f]|[^\w]|_/g, '')
@@ -28,6 +31,5 @@ export function validateUserInput(
   if (processedOrigin === processedDestination) {
     throw invalidDataError;
   }
-
   return true;
 }
