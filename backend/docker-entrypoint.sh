@@ -1,5 +1,5 @@
 echo "Running Prisma migrations..."
-npx prisma migrate deploy
+npx prisma migrate dev
 
 echo "Running seed script..."
 npm run seed
