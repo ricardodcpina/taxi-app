@@ -4,8 +4,8 @@
   "description": "Web application for requesting rides",
   "main": "",
   "scripts": {
-    "db:migrate": "npm run migrate -- prefix backend",
-    "db:seed": "npm run seed -- prefix backend",
+    "db:migrate": "npm run migrate --prefix backend",
+    "db:seed": "npm run seed --prefix backend",
     "db:init": "concurrently \"npm run migrate\" \"npm run seed\"",
     "dev": "concurrently \"npm run dev:front\" \"npm run dev:back\"",
     "dev:back": "npm run start:dev --prefix backend",
