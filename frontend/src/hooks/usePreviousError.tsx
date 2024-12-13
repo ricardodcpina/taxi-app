@@ -10,6 +10,7 @@ const usePreviousError = (errorMessage: string) => {
       toast.error(errorMessage);
       setPrevErrorMessage(errorMessage);
     }
+    setPrevErrorMessage('');
   }, [errorMessage, prevErrorMessage]);
 
   return;
