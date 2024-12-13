@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
+    host: '0.0.0.0',
     port: 80,
     proxy: {
       '/ride': 'http://localhost:8080',
@@ -12,10 +13,11 @@ export default defineConfig({
     },
   },
   preview: {
+    host: '0.0.0.0',
     port: 80,
     proxy: {
-      '/ride': `http://backend:8080`,
-      '/driver': 'http://backend:8080',
+      '/ride': `http://${process.env.VITE_BACKEND_DOMAIN}:8080`,
+      '/driver': `http://${process.env.VITE_BACKEND_DOMAIN}:8080`,
     },
   },
 });
