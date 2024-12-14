@@ -1,100 +1,139 @@
-# Taxi-App - Teste técnico Shopper
+# WhichWayNow
 
-Este é um teste técnico aplicado pela startup Shopper para vaga de desenvolvedor Web Full-stack.
+---
 
-O teste consiste em projetar e construir uma aplicação web full-stack que oferece serviço semelhante ao Uber / 99 Taxi.
+## Table of Contents
 
-🔧 🏗️🏗️🏗️ ⚙️
-Em construção...
+- [Live Demo](#live-demo)
+- [Technologies](#technologies)
+- [Description](#description)
+- [Architecture](#architecture)
+- [Pre-requisites](#pre-requisites)
+- [Running](#running)
+- [Testing](#testing)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Lista de tarefas
+---
 
-21/11/2024 e 22/11/2024
+## Live Demo
 
-### 1 - Geral
+Access the app at Railway.app at https://which-way-now-production.up.railway.app/!
 
-- Instalação de libs e frameworks ✔️
-- Implementação do PostgresSQL via Prisma ✔️
-- Popular banco de dados com motoristas ✔️
-- Rastreamento e criação de erros ✔️
-- Middleware de tratamento de erros ✔️
+---
 
-### 2 - Backend: Endpoint POST / ride / estimate
+## Technologies
 
-- Obter dados da requisição ✔️
-- Validação de dados inseridos ✔️
-- Integração com API Routes do Google ✔️
-- Filtrar listagem de motoristas disponíveis ✔️
-- Aplicar cálculo do valor das viagens ✔️
-- Extração dos dados da API e do banco ✔️
-- Formatar resposta do body com dados obtidos ✔️
+![Node](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white) ![PostgresSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white) ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
-### 3 - Backend: Endpoint PATCH / ride / confirm
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white) ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 
-- Obter dados da requisição ✔️
-- Validação dos dados inseridos ✔️
-- Validação via consulta ao banco ✔️
-- Persistir viagem no banco de dados ✔️
-- Formatar resposta do body com dados obtidos ✔️
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Railway](https://img.shields.io/badge/Railway-131415?style=for-the-badge&logo=railway&logoColor=white)
 
-### 4 - Backend: Endpoint GET / ride / {customer_id}?driver_id={id do motorista}
+---
 
-- Obter dados da requisição ✔️
-- Validação dos dados inseridos ✔️
-- Validação via consulta ao banco ✔️
-- Obter viagens realizadas pelo usuário ✔️
-- Aplicar filtro pelo id do motorista ✔️
-- Formatar resposta do body com dados obtidos ✔️
+## Description
 
-22/11/2024 e 23/11/2024
+WhichWayNow is a transportation service web application that integrates with Google to provide the user an optimal route between two addresses, as well as a list of available drivers and other ride specific details such as price and estimated duration.
 
-### 5 - Frontend: Tela de Solicitação de Viagem
+---
 
-- Implementar formulário com campos necessários para requisição ✔️
-- Implementar a requisição para a API ✔️
-- Exibir tela de opções de viagem ✔️
-- Tratamento de erros ✔️
+## Architecture
 
-### 6 - Frontend: Tela de Opções de Viagem
+- [Backend](#backend)
+- [Frontend](#frontend)
+- [Infrastructure](#infrastructure)
 
-- Incluir mapa estático da rota calculada ✔️
-- Listar opções de motoristas da viagem ✔️
-- Redirecionar para tela de histórico ✔️
-- Tratamento de erros ✔️
+A service-oriented Model-View-Controller pattern was preferred aiming segregation of responsibilities, code reusability, maintenance, scalability and easier external API integrations.
 
-### 7 - Frontend: Tela de Histórico de Viagens
+### Backend
 
-- Incluir formulário para filtro de viagens ✔️
-- Exibição da lista de viagens segundo filtro ✔️
-- Tratamento de erros ✔️
+Port: 8080
 
-24/11/2024 e 25/11/2024
+RESTful API built with Node, Typescript and Express.js: 
 
-### 8 - DevOps: Conteinerização da aplicação
+- **Node** - non blocking I/O, which allows the server to manage multiple simultaneous requests efficiently; Versatility with fullstack Javascript;
 
-- Criação do Dockerfile para o backend ✔️
-- Criação do Dockerfile para o frontend ✔️
-- Criação do Dockercompose ✔️
+- **Typescript** - Static typing provides type safety, better productivity with intellisense, compile-time error checking reducing bugs.
 
-### 9 - Refatoração
+- **Express.js** - Facilitates route creation, middlewares and HTTP request management; Faster API development.
 
-- Extrair serviços e funções para arquivos menores ✔️
-- Revisar nomes de funções e variáveis ✔️
-- Padronizar formatação do código ✔️
-- Incluir comentários ✔️
-- Excluir arquivos desnecessários ✔️
-- Avaliar estrutura da aplicação ✔️
+- API Endpoints at http://swagger.io/which-way-now
 
-26/11/2024 e 27/11/2024
+PostgreSQL Database provided by Prisma ORM:
 
-### 10 - Features opcionais
+- **Prisma** - provides support for mutliple databases; Automated queries and migrations for better productivity; Typescript compatibility;
 
-- Estilizar a aplicação ✔️
-- Testes unitários (backend) ✔️
+- **PostgreSQL** - Well-defined relation between entities; Robustness and support to complex transactions. 
 
-27/11/2024
+Unit testing with Jest assuring code runs correctly:
 
-### 11 - Deadline
+- **Jest** - Code coverage reports; Watch mode allows continous testing;
 
-- Alterar repositório para público
-- Envio da aplicação via formulário Google
+
+External API's:
+
+- **Google Route API** - calculates the optimized route, ETAs (estimated time of arrival) and distance between two given points, origin and destination.
+
+- **Google Geocoding API** - converts the given addresses to latitude/longitude coordinates.
+
+- **Google Maps Static API** - displays a static map with the calculated route and origin and destination markers.
+
+Middleware for global error handling.
+
+### Frontend
+
+Port: 80
+
+### Infrastructure
+
+The docker-compose file in root directory runs three main services:
+
+- PostgresSQL official database image on port 5432
+- Backend service from Dockerfile inside backend folder on port 8080
+- Frontend service from Dockerfile inside frontend folder on port 80
+
+Environment variables:
+
+- GOOGLE_API_KEY - Access to Google API's
+- DATABASE_URL - Database connection
+- VITE_BACKEND_DOMAIN - Vite's proxy configuration to backend service
+
+---
+
+### Features
+
+Optimized Route Calculation
+
+Access to Ride History
+
+---
+
+## Pre-requisites
+
+You can run the application locally with either Docker or Node.js
+
+##### Docker
+
+##### Node
+
+---
+
+## Running
+
+---
+
+## Testing
+
+---
+
+## Roadmap
+
+---
+
+## Contributing
+
+---
+
+## License
