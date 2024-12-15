@@ -1,12 +1,13 @@
 # WhichWayNow
 
+WhichWayNow is a transportation service web application that integrates with Google to provide the user an optimal route between two addresses, as well as a list of available drivers and other ride specific details such as price and estimated duration.
+
 ---
 
 ## Table of Contents
 
 - [Live Demo](#live-demo)
 - [Technologies](#technologies)
-- [Description](#description)
 - [Architecture](#architecture)
 - [Pre-requisites](#pre-requisites)
 - [Running](#running)
@@ -42,12 +43,6 @@ Access the app at Railway.app at https://which-way-now-production.up.railway.app
 **PostgreSQL** - SQL for well-defined relation between entities; Robustness and support to complex transactions.
 
 **Jest** - Code coverage reports; Watch mode allows continous testing;
-
----
-
-## Description
-
-WhichWayNow is a transportation service web application that integrates with Google to provide the user an optimal route between two addresses, as well as a list of available drivers and other ride specific details such as price and estimated duration.
 
 ---
 
