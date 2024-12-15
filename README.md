@@ -44,6 +44,16 @@ Access the app at Railway.app at https://which-way-now-production.up.railway.app
 
 **Jest** - Code coverage reports; Watch mode allows continous testing;
 
+**Vite** - HMR reduces wait times when making code changes; Optimized build performance; Built-in support for TS, JSX, CSS preprocessors.
+
+**React** - Component-based architecture providing code maintainabilty and reusability; Faster and efficient rendering with virtual DOM;
+
+**React Router** - Dynamic routing based on user input, URL parameters, etc; Improved organization with nested and hierarchical routes; Declarative routing makes app's navigation easier to understand and read.
+
+**Styled-Components** - Scoped and modular styles prevents conflicts with global CSS; Dynamic styling bases on props or state of components;
+
+**ESLint** - Enforce code consistency styles across the project; Allows customizable rules and error prevention;
+
 ---
 
 ## Architecture
@@ -156,7 +166,29 @@ Tests covers the following services and utility functions:
 
 ### Frontend
 
-Under construction 🔧 🏗️🏗️🏗️ ⚙️
+Frontend layer runs on port 80 and was built with Vite, React and Typescript. Its contents are the public directory with images, UI components, react hooks, routes, pages, and utility functions.  
+
+#### Routes
+
+Frontend routes are located inside App.tsx file:
+
+/ - Home Page (redirects to /request automatically)
+/request - Request ride page
+/options - Ride options page
+/history - Ride history page
+\* - Error page
+
+#### Pages
+
+Ride request page - This is the page the user gets redirected to when acessing home. There's the request form component so the user can provide a customer id number and the origin and destination addresses. 
+
+Ride options page - Displays the static map based on user input sent from the earlier request form. The map shows the calculated route and origin and destination markers. All driver options are presented so the user can make his choice. It displays an error page in case the user access /options directly without providing data from request form.
+
+Ride history page - The ride history form is displayed in this page. A table is shown based on the input the user provide: a customer id number and a driver filter option.
+
+#### Hooks
+
+
 
 ### Infrastructure
 
@@ -175,6 +207,8 @@ Environment variables:
 ---
 
 ### Features
+
+Under construction 🔧 🏗️🏗️🏗️ ⚙️
 
 Optimized Route Calculation
 
