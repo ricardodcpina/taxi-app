@@ -99,14 +99,14 @@ Errors found during service execution in controllers are redirected to the globa
 
 Ride schema endpoints:
 
-- POST /ride/estimate - estimateRideController
-- PATCH /ride/confirm - confirmRideController
-- GET /ride/{customer_id}?driver_id={driver_id} - listRidesController
-- GET /ride/static_map - generateMapRideController
+- `POST /ride/estimate` - estimateRideController
+- `PATCH /ride/confirm` - confirmRideController
+- `GET /ride/{customer_id}?driver_id={driver_id}` - listRidesController
+- `GET /ride/static_map` - generateMapRideController
 
 Driver schema endpoints:
 
-- /driver/ - listDriversController
+- `GET /driver` - listDriversController
 
 #### Routes
 
@@ -122,7 +122,7 @@ Ride services:
 
 - **confirmRideService** - validates if the option chosen by user has a valid driver and minimum kilometer according to database record. Save ride to database if validation is successfull and return true.
 
-- **listRidesService** - if driver_id is provided as a  a query param, validates driver_id and fetches list of rides from that driver. If no driver_id is provided, fetches a list with all the customer's ride disregarding the driver. Validates if no rides were found and returns the list of rides.
+- **listRidesService** - if driver_id is provided as a a query param, validates driver_id and fetches list of rides from that driver. If no driver_id is provided, fetches a list with all the customer's ride disregarding the driver. Validates if no rides were found and returns the list of rides.
 
 - **geoCodingService** - transforms addresses to latitude and longitude coordinates. Returns the coordinates.
 
@@ -156,7 +156,7 @@ Validation functions for controllers. validateBlankFields runs whenever user pro
 
 #### Tests
 
-Tests covers the following services and utility functions:
+Unit tests covers the following services and utility functions:
 
 - estimateRide
 - confirmRide
@@ -166,29 +166,47 @@ Tests covers the following services and utility functions:
 
 ### Frontend
 
-Frontend layer runs on port 80 and was built with Vite, React and Typescript. Its contents are the public directory with images, UI components, react hooks, routes, pages, and utility functions.  
+Frontend layer runs on port 80 and was built with Vite, React and Typescript. Its contents are the public directory with images, UI components, react hooks, routes, pages, and utility functions.
 
 #### Routes
 
 Frontend routes are located inside App.tsx file:
 
-/ - Home Page (redirects to /request automatically)
-/request - Request ride page
-/options - Ride options page
-/history - Ride history page
-\* - Error page
+- `/` - Home Page (redirects to /request automatically)
+- `/request` - Request ride page
+- `/options` - Ride options page
+- `/history` - Ride history page
+- `*` - Error page
 
 #### Pages
 
-Ride request page - This is the page the user gets redirected to when acessing home. There's the request form component so the user can provide a customer id number and the origin and destination addresses. 
+Ride request page - This is the page the user gets redirected to when acessing home. There's the request form component so the user can provide a customer id number and the origin and destination addresses.
 
-Ride options page - Displays the static map based on user input sent from the earlier request form. The map shows the calculated route and origin and destination markers. All driver options are presented so the user can make his choice. It displays an error page in case the user access /options directly without providing data from request form.
+Ride options page - Displays the static map based on user input sent from the earlier request form. The map shows the calculated route and origin and destination markers. All driver options are presented so the user can make his choice. It displays an error page in case the user access `/options` directly without providing data from request form.
 
 Ride history page - The ride history form is displayed in this page. A table is shown based on the input the user provide: a customer id number and a driver filter option.
 
 #### Hooks
 
+List os hooks and their usage:
 
+- **useFormState** - initializes formState state and links with handleChange event handler inside it. Returns formState and handleChange.
+
+- **usePreviousError** - initializes prevErrorMessage state and displays toast with each error received as a parameter. Cleans state if no errors are found. Returns undefined.
+
+- **useFetch** - initializes data, isLoading and errorMessage states. Defines the fetchData function and handleSubmit event handler then links fetchData with it. If data is successfully fetched, it updates data state, else if any errors occurred it updates the errorMessage state.Returns data, isLoading, errorMessage, fetchData and handleSubmit (fetchData will be used outside of submit event handles sometimes).
+
+- **useRideRequest** - used inside Ride request page. Calls useFormState and useFetch with user input data obtained from request form to API endpoint `/ride/estimate` . Returns data, requestData, formState, isLoading, errorMessage, handleChange, handleSubmit.
+
+- **useRideOption** - used inside Ride options age. Calls useFetch with chosen driver option and ride data to API endpoint `ride/confirm`. Returns data, isLoading, errorMessage and handleSubmit.
+
+- **useGenerateMap** - used inside Ride options page. Initializes mapURL state and calls useFetch with rideData from Ride request page to API endpoint `/ride/static_map?{queryparams}` with query params including the origin and destination markers and the calculated route. Returns mapURL (as a blob), isLoading and ErrorMessage.
+
+- **useRideHistory** - used inside Ride history page. Calls useFormState and useFetch with data obtained from URL query and params to API endpoint `/ride/{customer_id}?driver_id={driver_id}`. Returns data, formState, isLoading, errorMessage, handleChange, handleSubmit.
+
+#### Utility functions
+
+Contains the formatBRL function that applies BRL mask to numeric values.
 
 ### Infrastructure
 
