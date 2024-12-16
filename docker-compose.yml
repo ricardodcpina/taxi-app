@@ -4,7 +4,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin
-      POSTGRES_DB: taxi-app
+      POSTGRES_DB: which-way-now
     ports:
       - '5432:5432'
 
@@ -14,7 +14,7 @@ services:
       - '8080:8080'
     environment:
       - GOOGLE_API_KEY=${GOOGLE_API_KEY}
-      - DATABASE_URL=postgresql://postgres:admin@postgres:5432/taxi-app
+      - DATABASE_URL=postgresql://postgres:admin@postgres:5432/which-way-now
     command: ./docker-entrypoint.sh
     depends_on:
       - postgres
