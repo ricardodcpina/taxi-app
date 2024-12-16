@@ -1,5 +1,5 @@
 {
-  "name": "taxi-app",
+  "name": "whichwaynow",
   "private": true,
   "workspaces": [
     "frontend",
@@ -11,17 +11,17 @@
   "scripts": {
     "db:migrate": "npm run migrate --prefix backend",
     "db:seed": "npm run seed --prefix backend",
-    "db:init": "concurrently \"npm run migrate --prefix backend\" \"npm run seed --prefix backend\"",
+    "db:init": "npm run db:migrate && npm run db:seed",
     "dev": "concurrently \"npm run dev:front\" \"npm run dev:back\"",
-    "dev:back": "npm run start:dev --prefix backend",
+    "dev:back": "npm run dev --prefix backend",
     "dev:front": "npm run dev --prefix frontend",
     "prod": "concurrently \"npm run prod:front\" \"npm run prod:back\"",
-    "prod:back": "npm run start:prod --prefix backend",
+    "prod:back": "npm run prod --prefix backend",
     "prod:front": "npm run preview --prefix frontend",
     "build": "concurrently \"npm run build:front\" \"npm run build:back\"",
     "build:back": "npm run build --prefix backend",
     "build:front": "npm run build --prefix frontend",
-    "start": "npm run db:migrate && npm run db:seed && npm run prod"
+    "start": "npm run db:init && npm run prod"
   },
   "keywords": [],
   "author": "",
