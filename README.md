@@ -6,25 +6,25 @@ WhichWayNow is a transportation service web application that integrates with Goo
 
 ## Table of Contents
 
-- [Live Demo](#live-demo)
-- [Technologies](#technologies)
-- [Architecture](#architecture)
-- [Pre-requisites](#pre-requisites)
-- [Running](#running)
-- [Testing](#testing)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
+- [Live Demo](#globe_with_meridians-live-demo)
+- [Technologies](#computer-technologies)
+- [Architecture](#triangular_ruler-architecture)
+- [Pre-requisites](#package-pre-requisites)
+- [Running](#hammer_and_wrench-running)
+- [Testing](#test_tube-testing)
+- [Roadmap](#world_map-roadmap)
+- [Contributing](#handshake-contributing)
+- [License](#memo-license)
 
 ---
 
-## Live Demo
+## :globe_with_meridians: Live Demo
 
 Access the app at Railway.app at https://which-way-now-production.up.railway.app/!
 
 ---
 
-## Technologies
+## :computer: Technologies
 
 ![Node](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white) ![PostgresSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white) ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
@@ -62,7 +62,7 @@ Access the app at Railway.app at https://which-way-now-production.up.railway.app
 
 ---
 
-## Architecture
+## :triangular_ruler: Architecture
 
 - [Backend](#backend)
 - [Frontend](#frontend)
@@ -256,7 +256,7 @@ Access to Ride history - Access to a complete list of rides taken with the optio
 
 ---
 
-## Pre-requisites
+## :package: Pre-requisites
 
 Both Docker and Node.js are required to run the application locally.
 
@@ -273,7 +273,7 @@ Download Node from https://nodejs.org/en/download/prebuilt-installer.
 
 ---
 
-## Running
+## :hammer_and_wrench: Running
 
 To run the application locally you can either use docker-compose or node.
 
@@ -327,7 +327,7 @@ Create a new fork at https://github.com/ricardodcpina/which-way-now/fork.
 
 ---
 
-## Testing
+## :test_tube: Testing
 
 Test coverage provided by Jest includes only the backend layer for the moment.
 
@@ -337,13 +337,13 @@ Test coverage provided by Jest includes only the backend layer for the moment.
 
 ---
 
-## Roadmap
+## :world_map: Roadmap
 
 No further improvements mapped for this project.
 
 ---
 
-## Contributing
+## :handshake: Contributing
 
 1 - Fork project repository
 
@@ -375,6 +375,6 @@ Create an issue to report a bug at https://github.com/ricardodcpina/which-way-no
 
 ---
 
-## License
+## :memo: License
 
 Under construction 🔧 🏗️🏗️🏗️ ⚙️
