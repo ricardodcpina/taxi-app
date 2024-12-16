@@ -32,6 +32,10 @@ Access the app at Railway.app at https://which-way-now-production.up.railway.app
 
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Railway](https://img.shields.io/badge/Railway-131415?style=for-the-badge&logo=railway&logoColor=white)
 
+<details>
+<summary>Expand for details</summary>
+<br>
+
 **Node** - non blocking I/O, which allows the server to manage multiple simultaneous requests efficiently; Versatility with fullstack Javascript;
 
 **Typescript** - Static typing provides type safety, better productivity with intellisense, compile-time error checking reducing bugs.
@@ -54,6 +58,8 @@ Access the app at Railway.app at https://which-way-now-production.up.railway.app
 
 **ESLint** - Enforce code consistency styles across the project; Allows customizable rules and error prevention;
 
+</details>
+
 ---
 
 ## Architecture
@@ -65,6 +71,10 @@ Access the app at Railway.app at https://which-way-now-production.up.railway.app
 A service-oriented Model-View-Controller design was preferred aiming segregation of responsibilities, code reusability, maintenance, scalability and easier external API integrations.
 
 ### Backend
+
+<details>
+<summary>Expand for details</summary>
+<br>
 
 Backend layer runs on port 8080 and consists of a RestAPI built with Node.js, Typescript and Express.js. Its contents are the database models, controllers, services, routes, utility functions, customized errors, middlewares and some unit tests.
 
@@ -164,7 +174,13 @@ Unit tests covers the following services and utility functions:
 - validateBlankFields
 - validadeAddresses
 
+</details>
+
 ### Frontend
+
+<details>
+<summary>Expand for details</summary>
+<br>
 
 Frontend layer runs on port 80 and was built with Vite, React and Typescript. Its contents are the public directory with images, UI components, react hooks, routes, pages, and utility functions.
 
@@ -208,7 +224,13 @@ List os hooks and their usage:
 
 Contains the formatBRL function that applies BRL mask to numeric values.
 
+</details>
+
 ### Infrastructure
+
+<details>
+<summary>Expand for details</summary>
+<br>
 
 The docker-compose file in root directory runs three main services:
 
@@ -222,42 +244,119 @@ Environment variables:
 - DATABASE_URL - Database connection
 - VITE_BACKEND_DOMAIN - Vite's proxy configuration to backend service
 
+</details>
+
 ---
 
-### Features
+## Features
 
-Under construction 🔧 🏗️🏗️🏗️ ⚙️
+Optimized Route Calculation - Google's API integration guarantees best possible route between origin and destination.
 
-Optimized Route Calculation
-
-Access to Ride History
+Access to Ride history - Access to a complete list of rides taken with the option to filter by driver.
 
 ---
 
 ## Pre-requisites
 
-You can run the application locally with either Docker or Node.js
+Both Docker and Node.js are required to run the application locally.
 
-##### Docker
+### Docker
 
-##### Node
+Download Docker from https://docs.docker.com/desktop/.
+
+> [!NOTE]  
+> For Windows users, WSL2 is also required for running docker commands in terminal - https://learn.microsoft.com/pt-br/windows/wsl/install.
+
+### Node
+
+Download Node from https://nodejs.org/en/download/prebuilt-installer.
 
 ---
 
 ## Running
 
+### With Docker-Compose
+
+1 - Fork and clone the repository 
+
+`git clone https://github.com/ricardodcpina/which-way-now.git`
+
+2 - Access local repository
+
+`cd which-way-now`
+
+3 - Create a .env file in root directory with the required environment variables
+
+    GOOGLE_API_KEY=[api-key-here]
+    DATABASE_URL=[db-url-here]
+    VITE_BACKEND_DOMAIN=localhost
+
+> [!NOTE]  
+> If running locally set VITE_BACKEND_DOMAIN to localhost
+
+4 - Run the application using docker command in terminal
+
+`docker-compose up`
+
+5 - Access the application via http://localhost:80
+
+### With Node
+
+1 - Execute steps 1, 2 and 3 from Docker alternative above
+
+2 - Create database image using docker command in terminal
+
+`docker run --name taxi-app -p 5432:5432 -e POSTGRES_PASSWORD=admin -d postgres`
+
+3 - Install dependencies in root directory
+
+`npm install` 
+
+4 - Initialize database
+
+`npm run db:init`
+
+5 - Run the application using npm command in terminal
+
+`npm run dev`
+
+6 - Access the application via http://localhost:80
+
 ---
 
 ## Testing
+
+Under construction 🔧 🏗️🏗️🏗️ ⚙️
 
 ---
 
 ## Roadmap
 
+Under construction 🔧 🏗️🏗️🏗️ ⚙️
+
 ---
 
 ## Contributing
 
+Under construction 🔧 🏗️🏗️🏗️ ⚙️
+
 ---
 
 ## License
+
+Under construction 🔧 🏗️🏗️🏗️ ⚙️
+
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
