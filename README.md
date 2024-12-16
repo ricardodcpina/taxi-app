@@ -9,6 +9,7 @@ WhichWayNow is a transportation service web application that integrates with Goo
 - [Live Demo](#globe_with_meridians-live-demo)
 - [Technologies](#computer-technologies)
 - [Architecture](#triangular_ruler-architecture)
+- [Features](#star2-features)
 - [Pre-requisites](#package-pre-requisites)
 - [Running](#hammer_and_wrench-running)
 - [Testing](#test_tube-testing)
@@ -248,7 +249,7 @@ Environment variables:
 
 ---
 
-## Features
+## :star2: Features
 
 Optimized Route Calculation - Google's API integration guarantees best possible route between origin and destination.
 
