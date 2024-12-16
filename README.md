@@ -288,11 +288,8 @@ Download Node from https://nodejs.org/en/download/prebuilt-installer.
 3 - Create a .env file in root directory with the required environment variables
 
     GOOGLE_API_KEY=[api-key-here]
-    DATABASE_URL=[db-url-here]
+    DATABASE_URL=postgresql://postgres:admin@localhost:5432/which-way-now
     VITE_BACKEND_DOMAIN=localhost
-
-> [!NOTE]  
-> If running locally set VITE_BACKEND_DOMAIN to localhost
 
 4 - Run the application using docker command in terminal
 
