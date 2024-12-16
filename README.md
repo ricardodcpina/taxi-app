@@ -273,7 +273,9 @@ Download Node from https://nodejs.org/en/download/prebuilt-installer.
 
 ---
 
-## Running a local application
+## Running
+
+To run the application locally you can either use docker-compose or node.
 
 ### With Docker-Compose
 
