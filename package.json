@@ -21,7 +21,8 @@
     "build": "concurrently \"npm run build:front\" \"npm run build:back\"",
     "build:back": "npm run build --prefix backend",
     "build:front": "npm run build --prefix frontend",
-    "start": "npm run db:init && npm run prod"
+    "start": "npm run db:init && npm run prod",
+    "test": "npm run test --prefix backend"
   },
   "keywords": [],
   "author": "",
