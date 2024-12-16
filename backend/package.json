@@ -1,13 +1,13 @@
 {
-  "name": "taxi-app-backend",
+  "name": "whichwaynow-backend",
   "version": "1.0.0",
-  "description": "Taxi-App backend layer",
+  "description": "WhichWayNow backend layer",
   "main": "index.js",
   "scripts": {
     "seed": "dotenv -e ../.env ts-node prisma/seed.ts",
     "migrate": "dotenv -e ../.env npx prisma migrate dev",
-    "start:dev": "dotenv -e ../.env nodemon ./src/server.ts",
-    "start:prod": "dotenv -e ../.env node build/src/server.js",
+    "dev": "dotenv -e ../.env nodemon ./src/server.ts",
+    "prod": "dotenv -e ../.env node build/src/server.js",
     "build": "tsc",
     "test": "jest"
   },

@@ -8,4 +8,4 @@ echo "Running seed script..."
 npm run seed
 
 echo "Starting backend server..."
-npm run start:prod
+npm run prod
