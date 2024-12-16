@@ -264,7 +264,7 @@ Both Docker and Node.js are required to run the application locally.
 
 Download Docker from https://docs.docker.com/desktop/.
 
-> [!NOTE]  
+> [!IMPORTANT]  
 > For Windows users, WSL2 is also required for running docker commands in terminal - https://learn.microsoft.com/pt-br/windows/wsl/install.
 
 ### Node
@@ -273,35 +273,39 @@ Download Node from https://nodejs.org/en/download/prebuilt-installer.
 
 ---
 
-## Running
+## Running a local application
 
 ### With Docker-Compose
 
-1 - Fork and clone the repository 
+1 - Fork project repository
+
+Create a new fork at https://github.com/ricardodcpina/which-way-now/fork.
+
+2 - Clone repository with CLI
 
 `git clone https://github.com/ricardodcpina/which-way-now.git`
 
-2 - Access local repository
+3 - Access local cloned repository
 
 `cd which-way-now`
 
-3 - Create a .env file in root directory with the required environment variables
+4 - Create a .env file in root directory with the required environment variables
 
     GOOGLE_API_KEY=[api-key-here]
     DATABASE_URL=postgresql://postgres:admin@localhost:5432/which-way-now
     VITE_BACKEND_DOMAIN=localhost
 
-4 - Run the application using docker command in terminal
+5 - Run the application
 
 `docker-compose up`
 
-5 - Access the application via http://localhost:80
+6 - Access the application via http://localhost:80
 
 ### With Node
 
-1 - Execute steps 1, 2 and 3 from Docker alternative above
+1 - Execute steps 1 to 4 from "running with Docker" alternative above
 
-2 - Create database image using docker command in terminal
+2 - Create database image using docker command
 
 `docker run --name taxi-app -p 5432:5432 -e POSTGRES_PASSWORD=admin -d postgres`
 
@@ -309,11 +313,11 @@ Download Node from https://nodejs.org/en/download/prebuilt-installer.
 
 `npm install` 
 
-4 - Initialize database
+4 - Initialize PostgreSQL database
 
 `npm run db:init`
 
-5 - Run the application using npm command in terminal
+5 - Run the application
 
 `npm run dev`
 
@@ -323,37 +327,52 @@ Download Node from https://nodejs.org/en/download/prebuilt-installer.
 
 ## Testing
 
-Under construction 🔧 🏗️🏗️🏗️ ⚙️
+Test coverage provided by Jest includes only the backend layer for the moment.
+
+1 - Run npm command in root directory
+
+`npm run test`
 
 ---
 
 ## Roadmap
 
-Under construction 🔧 🏗️🏗️🏗️ ⚙️
+No further improvements mapped for this project.
 
 ---
 
 ## Contributing
 
-Under construction 🔧 🏗️🏗️🏗️ ⚙️
+1 - Fork project repository
+
+Create a new fork at https://github.com/ricardodcpina/which-way-now/fork.
+
+2 - Clone repository with CLI
+
+`git clone https://github.com/ricardodcpina/which-way-now.git`
+
+3 - Create a new branch
+
+`git checkout -b [branch-name]`
+
+4 - Make changes and commit
+
+`git commit -m "changes description"`
+
+5 - Push changes to remote repository
+
+`git push origin [branch-name]`
+
+6 - Open PR
+
+Open a pull request for main branch at https://github.com/ricardodcpina/which-way-now/compare.
+
+7 - Report bugs
+
+Create an issue to report a bug at https://github.com/ricardodcpina/which-way-now/issues.
 
 ---
 
 ## License
 
 Under construction 🔧 🏗️🏗️🏗️ ⚙️
-
-> [!NOTE]  
-> Highlights information that users should take into account, even when skimming.
-
-> [!TIP]
-> Optional information to help a user be more successful.
-
-> [!IMPORTANT]  
-> Crucial information necessary for users to succeed.
-
-> [!WARNING]  
-> Critical content demanding immediate user attention due to potential risks.
-
-> [!CAUTION]
-> Negative potential consequences of an action.
