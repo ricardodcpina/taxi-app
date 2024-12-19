@@ -43,11 +43,11 @@ Access the app at Railway.app at https://which-way-now-production.up.railway.app
 
 **Express.js** - Facilitates route creation, middlewares and HTTP request management; Faster API development.
 
-**Prisma** - provides support for mutliple databases; Automated queries and migrations for better productivity; Typescript compatibility;
+**Prisma** - provides support for multiple databases; Automated queries and migrations for better productivity; Typescript compatibility;
 
 **PostgreSQL** - SQL for well-defined relation between entities; Robustness and support to complex transactions.
 
-**Jest** - Code coverage reports; Watch mode allows continous testing;
+**Jest** - Code coverage reports; Watch mode allows continuous testing;
 
 **Vite** - HMR reduces wait times when making code changes; Optimized build performance; Built-in support for TS, JSX, CSS preprocessors.
 
@@ -55,7 +55,7 @@ Access the app at Railway.app at https://which-way-now-production.up.railway.app
 
 **React Router** - Dynamic routing based on user input, URL parameters, etc; Improved organization with nested and hierarchical routes; Declarative routing makes app's navigation easier to understand and read.
 
-**Styled-Components** - Scoped and modular styles prevents conflicts with global CSS; Dynamic styling bases on props or state of components;
+**Styled-Components** - Scoped and modular styles prevent conflicts with global CSS; Dynamic styling bases on props or state of components;
 
 **ESLint** - Enforce code consistency styles across the project; Allows customizable rules and error prevention;
 
